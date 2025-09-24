@@ -7,12 +7,3 @@
 # print(F"5. charecters: {x[::2]}")
 # print(F"6. charecters: {x[5:15]}")
 # print(f"7. x len: {len(x)} charecters")
-
-
-def hello():
-    x = "hello"
-    y= print(x)
-    return y
-
-g = hello()
-print(g)
