@@ -1,9 +1,16 @@
-# x = "hello world my name is Abdur Rhman Tuhin"
+print("\n📝 Exercise 2: Word Counter")
+def count_words(text):
+    """Count words"""
+    words = text.split()
+    return len(words)
 
-# print(F"1. charecters: {x[-5:]}")
-# print(F"2. charecters: {x[5:]}")
-# print(F"3. charecters: {x[:5]}")
-# print(F"4. charecters: {x[::-2]}")
-# print(F"5. charecters: {x[::2]}")
-# print(F"6. charecters: {x[5:15]}")
-# print(f"7. x len: {len(x)} charecters")
+sentences = [
+    "I eat rice",
+    "How are you today", 
+    "Bangladesh is our beloved country"
+]
+
+print("Word counting:")
+for sentence in sentences:
+    word_count = count_words(sentence)
+    print(f"'{sentence}' -> {word_count} words")

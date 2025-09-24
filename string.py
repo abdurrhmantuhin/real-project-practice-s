@@ -87,8 +87,11 @@ words = ["I", "LIVE", "IN", "BANGLADESH"]
 sentence = " ".join(words)
 print(F"using 'join()': {sentence}")
 
+
+
+
 print("\n5. Beautiful formatting")
-print("-" * 40)
+print("=" * 40)
 
 name =  "Abdur"
 marks = 86.92
@@ -106,3 +109,104 @@ text = "python"
 print(F"left aligned: '{text:<20}'")
 print(F"right aligned: '{text:>20}'")
 print(F"center aligned: '{text:^20}'")
+
+
+
+
+print("\n6. ESCAPE CHARACTERS ")
+print("=" * 40)
+
+print("first line\nsecond line ")
+
+print("name\trahman")
+print("age:\t25")
+
+print('He said, "i am fine"')
+print("He said, 'i am fine'")
+
+file_path = r"c://user//desktop//file.txt"
+print(f"file path: {file_path}")
+
+raw_path = r"c://user//desktop//file.txt"
+print(f"raw string: {raw_path}")
+
+
+
+
+print("\n7. STRING METHODS ")
+print("-" * 40)
+
+sample = "Hello python world"
+print(f"sample taxt: {sample}")
+
+print(f"isalpha() (all latters?): {'hello'.isalpha()}")
+print(f"isdigit() (all number?): {'123'.isdigit()}")
+print(f"islower() (all lowercase?): {"hello".islower()}")
+print(f"isupper() (all uppercase?): {"HELLO".isupper()}")
+
+print(F"find ('python) : {sample.find('python')}")
+print(F"count('l'): {sample.count('l')}")
+print(F"startwith('hello'): {sample.startswith('Hello')}")
+print(F"endwith('world'): {sample.endswith('world')}")
+
+sentences = "i eat rice every day"
+words = sentences.split()
+print(F"after split: {words}")
+
+rejoined = "=".join(words)
+print(f"rejoined: {rejoined}")
+
+
+
+
+print("\n8. PRACTICAL EXERCISES")
+print("-" * 50)
+
+
+print(F"exercise 1: name formating")
+def format_name(name):
+    clean_name = name.strip().title()
+    return clean_name
+
+names = ["tuhin","kazi","arny","khan"]
+print("name formating")
+for name in names:
+    formated = format_name(name)
+    print(f"befor: {name} --- after: {formated}")
+
+
+
+print("\nExercise 2: Word Counter")                 #have some issues
+def count_words(text):
+    """Count words"""
+    words = text.split()
+    return len(words)
+
+sentences = [
+    "I eat rice",
+    "How are you today", 
+    "Bangladesh is our beloved country"
+]
+
+print("Word counting:")
+for sentence in sentences:
+    word_count = count_words(sentence)
+    print(f"'{sentence}' -> {word_count} words")
+
+
+
+
+print("\nexrcise 3: simple email chekck")
+def check_email(email):
+    EMAIL = email.strip().lower()
+    if "@" in email and "." in email:
+        return "looks valid"
+    else:
+        return "looks invalid"
+    
+emails = ["user@gmail.com", "invalid.email", "test@yahoo.com"]
+print("email checking")
+for email in emails:
+    result = check_email(email)
+    print(F"{email} ---- {result }")
+
