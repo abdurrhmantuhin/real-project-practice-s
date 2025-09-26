@@ -134,7 +134,7 @@ print(f"raw string: {raw_path}")
 
 
 print("\n7. STRING METHODS ")
-print("-" * 40)
+print("=" * 40)
 
 sample = "Hello python world"
 print(f"sample taxt: {sample}")
@@ -160,25 +160,22 @@ print(f"rejoined: {rejoined}")
 
 
 print("\n8. PRACTICAL EXERCISES")
-print("-" * 50)
+print("=" * 50)
 
-
-print(F"exercise 1: name formating")
+print("\nexercise 1: name formatter")
 def format_name(name):
-    clean_name = name.strip().title()
+    clean_name =  name.strip().title()
     return clean_name
 
-names = ["tuhin","kazi","arny","khan"]
-print("name formating")
+names = ["tuhin", "arny", "ayra"]
+print("name formating!!!")
 for name in names:
-    formated = format_name(name)
-    print(f"befor: {name} --- after: {formated}")
+    formatted = format_name(name)
+    print(F"befor:{name} ---- after:{formatted}")
 
 
-
-print("\nExercise 2: Word Counter")                 #have some issues
-def count_words(text):
-    """Count words"""
+print("\nexercise 2: Word counter")
+def count_word(text):
     words = text.split()
     return len(words)
 
@@ -188,25 +185,42 @@ sentences = [
     "Bangladesh is our beloved country"
 ]
 
-print("Word counting:")
-for sentence in sentences:
-    word_count = count_words(sentence)
-    print(f"'{sentence}' -> {word_count} words")
-
-
-
-
-print("\nexrcise 3: simple email chekck")
+print("word counting:....")
+for santance in sentences:
+    word_count = count_word(santance)
+    print(F"befor sentence: {santance} ---- after sencence: {word_count}")
+    
+print("\nexercise 3: simple email check")
 def check_email(email):
-    EMAIL = email.strip().lower()
+    email =  email.strip().lower()
     if "@" in email and "." in email:
         return "looks valid"
     else:
         return "looks invalid"
     
 emails = ["user@gmail.com", "invalid.email", "test@yahoo.com"]
-print("email checking")
+print("email checking:")
 for email in emails:
-    result = check_email(email)
-    print(F"{email} ---- {result }")
+    results = check_email(email)
+    print(f"                 my email is: {email} ---- status: {results}")
 
+
+
+print("\n exercise 4: text statistiics")
+def text_stats(text):
+    char_count = len(text)
+    char_no_space = len(text.replace(" ",""))
+    word_count = len(text.split())
+
+    return {
+        "characters" : char_count,
+        "characters_no_space" : char_no_space,
+        "word" : word_count
+    }
+
+semple_text = "Python in easays programing"
+stats = text_stats(semple_text)
+print(F"text: {semple_text}")
+print(F"total charecter: {stats['characters']}")
+print(f"charecter withour space: {stats['characters_no_space']}")
+print(F"total word: {stats['word']}")
