@@ -113,3 +113,109 @@ print(f"After: '{good_entry}'")
 
 print("\n🔗 4. BUILDING DIARY ENTRIES - Building Diary Entries")
 print("-" * 55)
+
+name  = "arny"
+age = 18
+location = "Dhaka"
+activity = "GYM"
+feelings = "well"
+
+entry_plus = "my name is :" + name + "| my age is: " + str(age) + "years"
+print(f"'+'oparetors: {entry_plus}")
+
+entry_fstring = f"my naame is {name}, and my age is: {age} age, im living in {location} and today im going to {activity} now i feel so {feelings} !!!"
+print(f"f-string: {entry_fstring}")
+
+
+entry_format = "my name is{}, age: {}, i live in: {} and today my mood is{}".format(name,age,location,feelings)
+print(F"'.format()' format: {entry_format}")
+
+
+entry_parts = {
+    f"date: {datetime.now().strftime('%Y-%m-%d')}",
+    f"name {name}",
+    f"today work: {activity}",
+    f"feelings: {feelings}"
+}
+
+entry_joined = "|".join(entry_parts)
+print(entry_joined)
+
+
+print(f"\n📖 Complete Diary Entry:")
+complete_entry = f"""
+{"="*40}
+date:{datetime.now().strftime('%B %d, %Y')}
+writer : {name}
+location: {location}
+mood: {feelings}
+{"=" * 40}
+
+to day i feel {feelings}
+and i spend more time in {activity}
+feeling well bc im living in {location}..
+{'='*40}
+"""
+
+print(complete_entry)
+
+
+
+print("\n📊 ৫. BEAUTIFUL DIARY FORMATTING - সুন্দর ডায়েরি ফরম্যাটিং")
+print("-" * 60)
+
+writer = "tuhin"
+score = 87.5
+words_written = 1234
+time_spent = 2.5
+
+print("📈 Writing Statistics:")
+print(f"writer: {writer}")
+print(f"score:{score:.1f}")
+print(f"words writen: {words_written}")
+print(f"time spent: {time_spent:.2f}")
+
+print(f"\n📋 Diary Summary Report:")
+print(F"{'writer':<10}:{writer}")
+print(F"{'score':<10}: {score:.2f}")
+print(F"{'words':<10}: {words_written:.2f}")
+print(F"{'with':<10}: {time_spent}")
+
+
+completion = 0.875
+print(f"\ncompletion: {completion:.1%}")
+print(f"padded numnber: {42:0>5}")
+print(f"righ aliged: {writer:>20}")
+print(f"cntered:{writer:^29}")
+print(f"with start: {writer:*^20}")
+
+now = datetime.now()
+print(f"\n🕒 Time Formats:")
+print(f"Full date: {now:%A, %B %d, %Y}")
+print(f"Short date: {now:%d/%m/%Y}")
+print(f"Time: {now:%H:%M:%S}")
+print(f"12-hour: {now:%I:%M %p}")
+
+print("\n🚨 6. SPECIAL CHARACTERS IN DIARY ")
+print("-" * 55)
+
+diary_quote = "My \"mother \"Focus \"on \"your \"studies.\" I said, 'Okay, mother.'"
+print(F"quotes exmple: {diary_quote}")
+
+formatted_diary = """Today's diary:
+\t• Woke up at 7 am
+\t• Had breakfast
+\t• Went to school
+\t• Played in the afternoon"""
+
+print(f"Formatted entry:\n{formatted_diary}")
+
+
+windows_path = "C:\\Users\\Documents\\MyDiary\\today.txt"
+linux_path = "/home/user/documents/diary/today.txt"
+raw_windows = r"C:\Users\Documents\MyDiary\today.txt"
+
+print(f"\nFile paths:")
+print(f"Windows: {windows_path}")
+print(f"Linux: {linux_path}")  
+print(f"Raw string: {raw_windows}")
