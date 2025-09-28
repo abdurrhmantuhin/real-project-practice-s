@@ -352,6 +352,7 @@ def diary_word_counter(diary_text):
     line_coutn = len(diary_text.splitlines())
     word_list = diary_text.split()
     word_count = len(word_list)
+
     avg_word_length = sum(len(word) for word in word_list) / len(word_list) if word_list else 0
 
     return {
@@ -361,3 +362,58 @@ def diary_word_counter(diary_text):
         'lines': line_coutn,
         'avg_word_length': avg_word_length
     }
+
+test_diary = """
+Today I went to university.
+Programming class was very interesting.
+Learning Python feels good."""
+
+stats = diary_word_counter(test_diary)
+print(f"📊 Diary Statistics:")
+print(F"charecters: {stats['characters']}")
+print(F"without space: {stats['characters_no_space']}")
+print(F"how many words: {stats['words']}")
+print(F"how many lines in the chapter: {stats['lines']}")
+print(F"avg word leggth: {stats['avg_word_length']:.2f}")
+
+
+def extract_hashtags(text):
+    words = text.split()
+    hashtags = []
+    
+    for word in words:
+        if word.startswith('#'):
+            clean_hashtag = word.strip('.,!?')
+            hashtags.append(clean_hashtag)
+
+    return hashtags
+
+social_diary = "Today was #amazing! Had #fun with friends. #blessed #grateful #happy"
+hashtags = extract_hashtags(social_diary)
+print(f"\n#️⃣ Hashtag extraction:")
+print(f"Diary: '{social_diary}'")
+print(f"Found hashtags: {hashtags}")
+
+
+print("\n🎮 9. DIARY GAMES & FUN ACTIVITIES - Diary Games & Fun Activities")
+print("-" * 70)
+
+print("🎲 Game 1: Diary Word Reversal")
+diary_words = ["Python", "Programming", "Learning", "Happy", "Study"]
+print("Original words -> Reversed words:")
+for word in diary_words:
+    reversed_word = word[::-1]
+    print(F"{'befor':<4}: {word} ----- {'after':>5}: {reversed_word}")
+
+print("\n🎲 Game 2: Random Diary Sentence Generator")
+subjects = ["I", "My friend", "My family"]
+activities = ["studied", "went for a walk", "played games", "watched movies"]
+feelings = ["felt very good", "got joy", "had fun", "found peace"]
+
+print("Random diary sentences:")
+for i in range(5):
+    subject = random.choice(subjects)
+    activitie = random.choice(activities)
+    feeling = random.choice(feelings)
+    sentence = f"{subject} {activity} and {feeling}."
+    print(F"{i+1}. {sentence}")
