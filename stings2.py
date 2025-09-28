@@ -206,7 +206,9 @@ formatted_diary = """Today's diary:
 \t• Woke up at 7 am
 \t• Had breakfast
 \t• Went to school
-\t• Played in the afternoon"""
+\t• Played in the afternoon
+
+Comment: \"The day went well!\ """
 
 print(f"Formatted entry:\n{formatted_diary}")
 
@@ -219,3 +221,143 @@ print(f"\nFile paths:")
 print(f"Windows: {windows_path}")
 print(f"Linux: {linux_path}")  
 print(f"Raw string: {raw_windows}")
+
+
+decorations = {
+    'star': '⭐',
+    'heart': '💝', 
+    'smile': '😊',
+    'book': '📚',
+    'pen': '✏️'
+}
+
+decorated_entry = f"{decorations['star']} today's highlight {decorations['star']}\n"
+decorated_entry += f"{decorations['book']} studied for 3 hours {decorations['pen']}\n" 
+decorated_entry += f"{decorations['heart']} spent time with family{decorations['smile']}"
+
+print(f"\n🎨 Decorated entry:\n{decorated_entry}")
+
+
+print("\n🔍 7. DIARY ANALYSIS TOOLS - Diary Analysis Tools")
+print("-" * 55)
+
+sample_diary  = "I Love Programming and I Love Learning Python Every Day"
+print(f"Sample diary: '{sample_diary}'")
+
+
+
+print(f"\n📝 Case Analysis:")
+test_words =  ["EXCITED", "happy", "Programming", "123", "python123"]
+for word in test_words:
+    print(F"{word} --- islower: {word.islower()}, isupper: {word.isupper()}, istitle: {word.istitle()}")
+
+
+print(f"\n🔎 Content Analysis:")
+print(f"length: {len(sample_diary)} charecters")
+print(f"word count: {len(sample_diary.split())} words")
+print(f"'love' appears: {sample_diary.count('Love')} times")
+print(f"'python' position: {sample_diary.find('Python')}")
+print(f"start with 'I': {sample_diary.startswith('I')} ")
+print(f"end with 'Day': {sample_diary.endswith('Day')}")
+
+
+
+words = sample_diary.split()
+print(F"split into words: {words}")
+print(F"join with '-': {'-'.join(words)}")
+
+email_diary = "Today I got email from teacher@school.com and friend@gmail.com"
+print(f"\n📧 Email diary: '{email_diary}'")
+
+words_in_email = email_diary.split()
+emails = []
+for word in words_in_email:
+    if "@" in word:
+        clean_word = word.strip('.,!?')
+        emails.append(clean_word)
+print(F"found email: {emails}")
+
+
+mood_diary = "Today was AMAZING! I felt HAPPY and EXCITED about everything!"
+positive_words = ["amazing", "happy", "excited", "good", "great", "wonderful"]
+negative_words = ["sad", "bad", "terrible", "awful", "boring"]
+
+positive_count = 0
+negative_count = 0
+mood_words_found = []
+
+for word in mood_diary.lower().split():
+    clean_words = word.strip('.,!?')
+    if clean_words in positive_words:
+        positive_count += 1
+        mood_words_found.append(f"✅ {clean_words}")
+    elif clean_words in negative_words:
+        negative_count += 1 
+        mood_words_found.append(f"❌ {clean_words}")
+
+print(f"\n😊 Mood Analysis:")
+print(f"Diary: '{mood_diary}'")
+print(f"Positive words: {positive_count}")
+print(f"Negative words: {negative_count}")
+print(f"Mood words found: {mood_words_found}")
+
+if positive_count > negative_count:
+    print(F"overall mood posative!!")
+elif negative_count > positive_count:
+    print("overall mood negative")
+else:
+    print("overall mood natural")
+
+
+print("\n🎯 8. INTERACTIVE DIARY FUNCTIONS - Interactive Diary Functions")
+print("-" * 65)
+
+def create_diary_entry(name,activity,mood,location):
+    name = name.strip().title()
+    activity = activity.strip().lower()
+    mood = mood.strip().lower()
+    location = location.strip().title()
+
+    entry = f"""
+
+📔 DIARY ENTRY - {datetime.now().strftime('%B %d, %Y')}
+{'='*40}
+👤 Name: {name}
+📍 Location: {location}  
+😊 Mood: {mood.capitalize()}
+🎯 Activity: {activity.capitalize()}
+{'='*40}
+
+Today I did {activity} in {location}.
+This made me feel {mood}.
+The day really went well! ✨
+
+Written by: {name}
+Time: {datetime.now().strftime('%I:%M %p')}
+"""
+    
+    return entry
+
+
+print("📝 Creating diary entries:")
+entries = [
+    ("Ali Ahmed", "playing football", "happy", "Dhaka"),
+    ("Rina Khan", "reading books", "peaceful", "Sylhet"), 
+    ("Karim Rahman", "chatting with friends", "joyful", "Chittagong")
+]
+
+def diary_word_counter(diary_text):
+    char_count = len(diary_text)
+    char_no_space = len(diary_text.replace(" ", ""))
+    line_coutn = len(diary_text.splitlines())
+    word_list = diary_text.split()
+    word_count = len(word_list)
+    avg_word_length = sum(len(word) for word in word_list) / len(word_list) if word_list else 0
+
+    return {
+        'characters': char_count,
+        'characters_no_space': char_no_space,
+        'words': word_count,  
+        'lines': line_coutn,
+        'avg_word_length': avg_word_length
+    }
